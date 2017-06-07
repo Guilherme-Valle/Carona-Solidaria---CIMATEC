@@ -11,8 +11,7 @@ struct endereco {
 	char bairro [30];
 	char complemento [35];
 };
-struct usuarios {
-	
+struct usuarios {	
 	char nome [30];
 	int cpf;
 	int senha;
@@ -27,7 +26,6 @@ struct usuarios {
 	int carro;
 	int numviagens;
 };
-
 int motorista (struct usuarios vetmotorista[], int jy){
 	system ("cls");
 	int u, z,i, o=25, nuta;
@@ -81,8 +79,7 @@ int motorista (struct usuarios vetmotorista[], int jy){
 				system ("cls");
 				printf ("Aqui estão suas solicitações de carona \n\n");
 				for (i = 0; i < 100; i++){ 
-					if (vetmotorista[i].dispcarona == 1){
-						
+					if (vetmotorista[i].dispcarona == 1){			
 						printf ("Nome do caroneiro: %s \n Número do celular: %s \n E-mail: %s \n", vetmotorista[i].nome, vetmotorista[i].numerocelular,  vetmotorista[i].email);
 						printf ("Endereço: %s \n Complemento do endereço: %s \n\n",  vetmotorista[i].end.bairro, vetmotorista[i].end.complemento);
 						printf ("Avaliação do usuário: %f", vetmotorista[i].nota/vetmotorista[i].numviagens);
@@ -102,10 +99,7 @@ int motorista (struct usuarios vetmotorista[], int jy){
 		case 3: 
 				system ("cls");
 				printf ("Sua avaliação, de 1 a 5 estrelas, segundo os usuários, corresponde a \n: %f estrelas!", vetmotorista[jy].nota/vetmotorista[jy].numviagens);
-				
-			
 				break;
-				
 		default:
 				printf ("Opção inválida!");
 				system ("cls");
@@ -113,7 +107,6 @@ int motorista (struct usuarios vetmotorista[], int jy){
 		}
 	} while (o != 0); 
 }
-
 int carona (struct usuarios vetcarona[], int jj){
 	system ("cls");
 	int r = 1, ki, viaj, yp, canc, notaa;
@@ -159,11 +152,8 @@ int carona (struct usuarios vetcarona[], int jj){
 							system ("cls");
 							printf ("A nota é inválida, consideraremos a nota como 0!");
 							vetcarona[jj].numviagens++;
-						}
-						
-						
+						}		
 					}
-					
 				} else {
 					system ("cls");
 					printf ("\nDeseja cancelar a solicitação de carona? \n Digite 1 para cancelar\n");
@@ -171,17 +161,14 @@ int carona (struct usuarios vetcarona[], int jj){
 					system ("cls");
 					if (canc == 1){
 						printf ("Sua solicitação foi cancelada!\n");
-						vetcarona[jj].dispcarona = 0;
-						
+						vetcarona[jj].dispcarona = 0;	
 					}
 				} 
-				
 				break;
 		case 2:
 				system ("cls");
 				printf ("Sua avaliação pelos outros usuários é : %f \n ", vetcarona[jj].nota/vetcarona[jj].numviagens);
 				break;
-		
 		case 3: 
 				system ("cls");
 				printf ("Deseja alterar seu endereço? Digite 1 se sim \n \n");
@@ -194,25 +181,15 @@ int carona (struct usuarios vetcarona[], int jj){
 					printf ("\n Agora o complemento do endereço");
 					fgets (vetcarona[jj].end.complemento, 35, stdin);
 					fflush (stdin);
-					
 				} 
-				
 				break;
-				
 		default:
 				system ("cls");
 				printf ("Opção inválida!");
-				
 				break;
-				
 			}
-				
-	
-	
-	
 	} while (r != 0);
 }
-
 int tela1 (struct usuarios vetor1[], int j){
 	int choose;
 	system("cls");
@@ -237,12 +214,10 @@ int tela1 (struct usuarios vetor1[], int j){
 			break;
 		default:
 				system ("cls");
-				printf ("Opção inválida!");
-				
+				printf ("Opção inválida!");		
 				break;
 	}		
 }
-
 int login (struct usuarios vet[]){
 	int i, cp, senha1;
 	system ("cls");
@@ -266,14 +241,12 @@ int login (struct usuarios vet[]){
 			} else {
 				system ("cls");
 				printf ("Senha inválida.");
-			}
-			
+			}	
 		} else
 			system ("cls"); 
 			("CPF não registrado.");
 	}
 }
-
 int registrar (struct usuarios vet[], int x){
 	int i,cpfi, carru;
 	printf("                              *********************************************************************************************************\n");
@@ -397,7 +370,6 @@ int registrar (struct usuarios vet[], int x){
 	fflush (stdin);
 	system ("cls");	
 }
-
 main (){
 	struct usuarios Usuariox [100];
 	int z,k, num = 0;
